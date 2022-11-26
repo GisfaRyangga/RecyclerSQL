@@ -1,9 +1,9 @@
 package com.example.recyclesql;
 
-public class Product {
+public class Character {
     private int id;
     private String name;
-    private int price;
+    private String power;
 
     public int getId() {
         return id;
@@ -21,11 +21,11 @@ public class Product {
         this.name = name;
     }
 
-    public int getPrice() {
-        return price;
+    public String getPower() {
+        return power;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setPower(String power) {
+        this.power = power;
     }
 }

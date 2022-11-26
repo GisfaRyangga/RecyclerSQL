@@ -7,12 +7,12 @@
     android:layout_margin="15dp">
 
     <TextView
-        android:id="@+id/txt_nama"
+        android:id="@+id/txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="168dp"
-        android:text="nama"
+        android:text="Name"
         android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/btn_update"
@@ -21,17 +21,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txt_price"
+        android:id="@+id/txt_power"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="168dp"
-        android:text="harga"
+        android:text="Power"
         android:textSize="16dp"
         app:layout_constraintEnd_toStartOf="@+id/btn_delete"
         app:layout_constraintHorizontal_bias="0.009"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nama" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_name"/>
 
     <Button
         android:id="@+id/btn_delete"
@@ -42,7 +42,8 @@
         android:text="Delete"
         android:textSize="8sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="#FA0000"/>
 
     <Button
         android:id="@+id/btn_update"
@@ -55,8 +56,9 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_delete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVerticald_bias="0.25"
+        tools:ignore="MissingConstraints"
+        android:backgroundTint="#0027FF"/>
 
-
+d
 </androidx.constraintlayout.widget.ConstraintLayout>
