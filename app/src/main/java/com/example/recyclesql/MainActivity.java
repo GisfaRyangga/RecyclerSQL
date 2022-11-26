@@ -19,8 +19,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Character> values = new ArrayList<>();
+    private ArrayList<Character> bleach_char = new ArrayList<>();
     private DatabaseHelper databaseHelper;
+
     RecyclerView recyclerView;
     RecyclerViewAdapter recyclerViewAdapter;
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                             databaseHelper.insertProductItem(character);
                         }
                         Toast.makeText(MainActivity.this, "Data karakter berhasil disimpan", Toast.LENGTH_SHORT).show();
-                        values.clear();
+                        bleach_char.clear();
                         getAllCharacters();
                     }
                 }
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rv_characters);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        recyclerViewAdapter = new RecyclerViewAdapter(this, values);
+        recyclerViewAdapter = new RecyclerViewAdapter(this, bleach_char);
         getAllCharacters();
         recyclerView.setAdapter(recyclerViewAdapter);
 
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     launcher.launch(intent);
                 } else if (id == R.id.btn_delete){
                     databaseHelper.deleteCharacter(character);
-                    values.clear();
+                    bleach_char.clear();
                     getAllCharacters();
                 }
             }
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getAllCharacters(){
-        values.addAll(databaseHelper.getAllProducts());
+        bleach_char.addAll(databaseHelper.getAllProducts());
         recyclerViewAdapter.notifyDataSetChanged();
     }
 }
