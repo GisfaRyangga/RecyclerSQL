@@ -24,11 +24,11 @@ public class CharacterForm extends AppCompatActivity {
         submit = findViewById(R.id.btn_submit);
 
         Intent intent = getIntent();
-        id = intent.getIntExtra("PRODUCT_ID", -1);
+        id = intent.getIntExtra("CHARACTER_ID", -1);
 
         if (id != -1){
-            char_name.setText(intent.getStringExtra("PRODUCT_NAME"));
-            char_power.setText(intent.getStringExtra("PRODUCT_POWER"));
+            char_name.setText(intent.getStringExtra("CHARACTER_NAME"));
+            char_power.setText(intent.getStringExtra("CHARACTER_POWER"));
         }
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -43,9 +43,9 @@ public class CharacterForm extends AppCompatActivity {
 
     private void storeCharacter(String nama_karakter, String karakter_power){
         Intent intent = new Intent();
-        intent.putExtra("PRODUCT_ID",id);
-        intent.putExtra("PRODUCT_NAME",nama_karakter);
-        intent.putExtra("PRODUCT_POWER",karakter_power);
+        intent.putExtra("CHARACTER_ID",id);
+        intent.putExtra("CHARACTER_NAME",nama_karakter);
+        intent.putExtra("CHARACTER_POWER",karakter_power);
         setResult(RESULT_OK, intent);
         super.onBackPressed();
     }

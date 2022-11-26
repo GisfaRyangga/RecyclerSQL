@@ -31,17 +31,17 @@ public class MainActivity extends AppCompatActivity {
                 public void onActivityResult(ActivityResult result) {
                     if(result.getResultCode() == RESULT_OK){
                         Intent data = result.getData();
-                        int id = data.getIntExtra("PRODUCT_ID", -1);
+                        int id = data.getIntExtra("CHARACTER_ID", -1);
 
                         Character character = new Character();
                         character.setId(id);
-                        character.setName(data.getStringExtra("PRODUCT_NAME"));
-                        character.setPower(data.getStringExtra("PRODUCT_POWER"));
+                        character.setName(data.getStringExtra("CHARACTER_NAME"));
+                        character.setPower(data.getStringExtra("CHARACTER_POWER"));
 
                         if(id != -1){
                             databaseHelper.updateCharacter(character);
                         } else {
-                            databaseHelper.insertProductItem(character);
+                            databaseHelper.insertCharacter(character);
                         }
                         Toast.makeText(MainActivity.this, "Data karakter berhasil disimpan", Toast.LENGTH_SHORT).show();
                         bleach_char.clear();
@@ -69,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
                 int id = v.getId();
                 if (id == R.id.btn_update){
                     Intent intent = new Intent(v.getContext(), CharacterForm.class);
-                    intent.putExtra("PRODUCT_ID", character.getId());
-                    intent.putExtra("PRODUCT_NAME", character.getName());
-                    intent.putExtra("PRODUCT_POWER", character.getPower());
+                    intent.putExtra("CHARACTER_ID", character.getId());
+                    intent.putExtra("CHARACTER_NAME", character.getName());
+                    intent.putExtra("CHARACTER_POWER", character.getPower());
                     launcher.launch(intent);
                 } else if (id == R.id.btn_delete){
                     databaseHelper.deleteCharacter(character);
